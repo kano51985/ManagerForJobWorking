@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sana.dao.DailyReportsMapper">
+
+    <resultMap id="dailyReportsMap" type="DailyReports">
+        <result property="report_id" column="report_id"/>
+        <result property="employee_id" column="employee_id"/>
+        <result property="report_date" column="report_date"/>
+        <result property="content" column="content"/>
+        <result property="comments" column="comments"/>
+
+        <association property="employees" javaType="Employees">
+            <result property="employee_id" column="employee_id"/>
+            <result property="department_id" column="department_id"/>
+            <result property="username" column="username"/>
+            <result property="password" column="password"/>
+            <result property="name" column="name"/>
+        </association>
+
+        <association property="authorizations" javaType="Authorizations">
+            <result property="authorization_id" column="authorization_id"/>
+            <result property="authorized_role" column="authorized_role"/>
+        </association>
+
+        <association property="departments" javaType="Departments">
+            <result property="department_id" column="department_id"/>
+            <result property="department_name" column="department_name"/>
+            <result property="manager_id" column="manager_id"/>
+        </association>
+    </resultMap>
+
+    <select id="getAllDailyDataByDepartment" resultMap="dailyReportsMap">
+        SELECT da.*,d.department_name,e.username,a.authorized_role FROM daily_reports da
+        LEFT JOIN employees e ON da.employee_id=e.employee_id
+        LEFT JOIN authorizations a ON e.authorization_id=a.authorization_id
+        LEFT JOIN departments d ON d.department_id=e.department_id
+        WHERE e.department_id=#{department_id}
+    </select>
+
+    <select id="getUserDailyReportsById" resultMap="dailyReportsMap">
+        SELECT da.*,d.department_name,e.username,a.authorized_role FROM daily_reports da
+        LEFT JOIN employees e ON da.employee_id=e.employee_id
+        LEFT JOIN authorizations a ON e.authorization_id=a.authorization_id
+        LEFT JOIN departments d ON d.department_id=e.department_id
+        WHERE da.report_id=#{report_id}
+    </select>
+
+    <select id="getAllDailyDataById" resultMap="dailyReportsMap">
+        SELECT da.*,d.department_name,e.username,a.authorized_role FROM daily_reports da
+        LEFT JOIN employees e ON da.employee_id=e.employee_id
+        LEFT JOIN authorizations a ON e.authorization_id=a.authorization_id
+        LEFT JOIN departments d ON d.department_id=e.department_id
+        WHERE da.employee_id=#{employee_id}
+    </select>
+</mapper>

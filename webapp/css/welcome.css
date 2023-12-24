@@ -1,0 +1,55 @@
+* {
+			margin: 0px;
+			padding: 0px;
+			font-size: 14px;
+		}
+		
+		#up {
+			height: 40px;
+			border-bottom: 1px #999 dotted;
+		}
+		#up ul li {
+			background: url("../img/hold.png") 0 0 no-repeat #e5e5e5;
+			color: #4C8FBD;
+			background-position: 5px 9px;
+			height: 40px;
+		}
+		
+		#up ul li span {
+			position: relative;
+			top: 10px;
+			left: 30px;
+		}
+		#d1 {
+			width: 90%;
+			background: #D9EDF7;
+			height: 50px;
+			position: relative;
+			top: 10px;
+			left: 50%;
+			margin-left: -45%;
+			border-radius: 5px;
+		}
+		
+		.s1 {
+			color: #69AA46;
+			position: relative;
+			top: 15px;
+			left: 30px;
+		}
+		
+		.s2 {
+			color: #31708F;
+			position: relative;
+			top: 15px;
+			left: 30px;
+		}
+		#d2 {
+			width: 506px;
+			height: 86px;
+			
+			position: relative;
+			left: 50%;
+			margin-left: -253px;
+			top: 20px;
+		}

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sana.dao.EmployeesMapper">
+    <resultMap id="userToAuthorization" type="Employees">
+        <result property="employee_id" column="employee_id"/>
+        <result property="department_id" column="department_id"/>
+        <result property="authorization_id" column="authorization_id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="name" column="name"/>
+        <association property="authorizations" javaType="Authorizations">
+            <result property="authorization_id" column="auth_id"/>
+            <result property="authorized_role" column="authorized_role"/>
+        </association>
+    </resultMap>
+
+    <resultMap id="userToDepartment" type="Employees">
+        <result property="employee_id" column="employee_id"/>
+        <result property="department_id" column="department_id"/>
+        <result property="authorization_id" column="authorization_id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="name" column="name"/>
+        <association property="departments" javaType="Departments">
+            <result property="department_id" column="d_department_id"/>
+            <result property="department_name" column="department_name"/>
+            <result property="manager_id" column="manager_id"/>
+        </association>
+        <association property="authorizations" javaType="Authorizations">
+            <result property="authorization_id" column="auth_id"/>
+            <result property="authorized_role" column="authorized_role"/>
+        </association>
+    </resultMap>
+
+    <select id="getUserById" resultMap="userToAuthorization">
+        SELECT b.employee_id,b.department_id,b.authorization_id,b.username,b.password,b.name,r.authorization_id,r.authorized_role
+        FROM employees b LEFT JOIN authorizations r
+        ON b.authorization_id=r.authorization_id
+        WHERE b.employee_id=#{employee_id}
+    </select>
+    <select id="login" resultMap="userToAuthorization">
+        SELECT e.`employee_id`,e.`department_id`, e.`authorization_id`,e.`username`,e.`password`,e.`name`,
+               a.`authorization_id` AS a_authorization_id,a.`authorized_role`
+        FROM employees e
+        LEFT JOIN authorizations a
+        ON e.`authorization_id`=a.`authorization_id`
+        WHERE e.`username`=#{username} AND e.`password`=#{password} AND e.`authorization_id`=#{authorization_id};
+    </select>
+    <select id="myCenter" resultMap="userToAuthorization">
+        SELECT e.`employee_id`,e.`department_id`, e.`authorization_id`,e.`username`,e.`password`,e.`name`,
+               a.`authorization_id` AS a_authorization_id,a.`authorized_role`
+        FROM employees e
+        LEFT JOIN authorizations a
+        ON e.`authorization_id`=a.`authorization_id`
+        WHERE e.`username`=#{username}
+    </select>
+    <select id="getAllUser" resultMap="userToDepartment">
+        SELECT e.*,a.authorization_id as a_authorization_id,a.authorized_role,d.department_id as d_department_id,d.department_name,d.manager_id
+        FROM authorizations a
+        LEFT JOIN employees e ON a.authorization_id=e.`authorization_id`
+        LEFT JOIN departments d ON e.`department_id`=d.department_id
+    </select>
+</mapper>

@@ -1,0 +1,182 @@
+#nav {
+	height: 100px;
+	border-bottom: 3px #4C8FBD solid;
+	margin-bottom: 1px;
+}
+#c_nav {
+	height: 100px;
+	width: 1000px;
+	position: relative;
+	left: 50%;
+	margin-left: -500px;
+}
+#c_nav div {
+	float: left;
+}
+
+#logo {
+	height: 59px;
+	width: 117px;
+	background: url("/ssm/img/logo.png") no-repeat;
+	position: relative;
+	top: 20px;
+	left: 50px;
+}
+#search {
+	width: 700px;
+	position: relative;
+	left:150px; 
+}
+#in {
+	height: 40px;
+	width: 500px;
+	position: relative;
+	top: 27px;
+	border-radius: 6px;
+	border: 1px #DBDBDB solid;
+	font-size: 20px;
+}
+#su {
+	height: 40px;
+	width: 120px;
+	background: #4C8FBD;
+	font-size: 18px;
+	color: #fff;
+	font-weight: bold;
+	position: relative;
+	top: 27px;
+	border-radius: 6px;
+	border: 1px #4C8FBD solid;
+	cursor: pointer;
+}
+#con {
+	margin-top: 20px;
+}
+#c_con {
+	width: 1000px;
+	position: relative;
+	left: 50%;
+	margin-left: -500px;
+}
+#up {
+	height: 450px;
+	border: 1px #4C8FBD solid;
+}
+#up div {
+	float: left;
+}
+
+#left {
+	width: 400px;
+	height: 450px;
+	border-right: 1px #4C8FBD solid;
+}
+#left_u {
+	margin-top: 5px;
+	width: 400px;
+	text-align: center;
+}
+#left_u img {
+	display: none;
+}
+#left_d {
+	width: 400px;
+	text-align: center;
+}
+#left_d li {
+	position: relative;
+	top: 15px;
+	width: 55px;
+	height: 55px;
+	float: left;
+	list-style: none;
+	cursor: pointer;
+}
+#left_d li:HOVER {
+	border: 2px #4C8FBD solid;
+}
+#right {
+	width: 590px;
+	height: 450px;
+}
+#right table {
+	margin-top: 10px;
+	margin-bottom: 40px;
+	margin-left: 5px;
+}
+.tr1 {
+	height: 60px;
+}
+.tr2 {
+	background: #FFF2E8;
+	height: 45px;
+}
+.td1 {
+	margin-top: 10px;
+	font-size: 18px;
+	color: #3C3C3C;
+}
+.td2 {
+	color: #6c6c6c;
+	font-size: 14px;
+	width: 100px;
+}
+.td3 {
+	font-size: 14px;
+}
+.td4 {
+	font-size: 18px;
+	color: #4C8FBD;
+}
+#minus,#plus {
+	width: 20px;
+	font-size: 14px;
+	position: relative;
+	top: 10px;
+}
+#buynum {
+	position: relative;
+	top: 10px;
+	width: 50px;
+	font-size: 18px;
+	text-align: center;
+}
+#right ul li {
+	list-style: none;
+	height: 70px;
+	width: 400px;
+	margin-left: 10px;
+}
+.lis {
+	position: relative;
+	top: 10px;
+	font-size: 14px;
+	color: #6c6c6c;
+}
+#btn1,#btn2 {
+	background: #4C8FBD;
+	width: 120px;
+	height: 40px;
+	font-size: 18px;
+	color: #fff;
+	border-radius: 6px;
+	margin-right: 5px;
+	border: 1px #4C8FBD solid;
+	cursor: pointer;
+}
+#down {
+	clear: both;
+	height: 80px;
+	width: 500px;
+}
+#copy {
+	height: 30px;
+	background: #4C8FBD;
+}
+#c_copy {
+	text-align: center;
+	color: #fff;
+	font-family: arial;
+	position: relative;
+	top: 7px;
+}

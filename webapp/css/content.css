@@ -1,0 +1,39 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	font-size: 14px;
+}
+
+#up {
+	height: 40px;
+	border-bottom: 1px #999 dotted;
+}
+#up ul li {
+	background: url("/shopping/img/hold.png") 0 0 no-repeat #e5e5e5;
+	color: #4C8FBD;
+	background-position: 5px 9px;
+	height: 40px;
+}
+
+#up ul li span {
+	position: relative;
+	top: 12px;
+	left: 30px;
+}
+
+#down tr {
+	height: 60px;
+}
+
+#up a:VISITED,#up a:LINK {
+	color: #4C8FBD;
+	text-decoration: none;
+}
+#up a:HOVER {
+	color: #4C8FBD;
+	text-decoration: none;
+}
+.head {
+	background: #438EB9;
+	color: #fff;
+}

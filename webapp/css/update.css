@@ -1,0 +1,90 @@
+* {
+			margin: 0px;
+			padding: 0px;
+			font-size: 14px;
+		}
+		
+		#up {
+			height: 40px;
+			border-bottom: 1px #999 dotted;
+		}
+		#up ul li {
+			background: url("../img/hold.png") 0 0 no-repeat #e5e5e5;
+			color: #4C8FBD;
+			background-position: 5px 9px;
+			height: 40px;
+		}
+		
+		#up ul li span {
+			position: relative;
+			top: 12px;
+			left: 30px;
+		}
+		
+		#down tr {
+			height: 60px;
+		}
+		
+		#up a:VISITED,#up a:LINK {
+			color: #4C8FBD;
+			text-decoration: none;
+		}
+		#up a:HOVER {
+			color: #4C8FBD;
+			text-decoration: none;
+		}
+		.head {
+			background: #438EB9;
+			color: #fff;
+		}
+		#down table {
+			position: relative;
+			left: 50%;
+			margin-left: -250px;
+			top: 50px;
+		}
+		
+		#down tr {
+			height: 40px;
+		}
+		.in {
+			height: 30px;
+			width: 360px;
+		}
+		.su {
+			height: 30px;
+			width: 80px;
+			background: #438EB9;
+			border-radius: 5px;
+			margin-left: 30px;
+		}
+		
+		#down table {
+			position: relative;
+			left: 50%;
+			margin-left: -250px;
+			top: 50px;
+		}
+		
+		#down tr {
+			height: 40px;
+		}
+		.in {
+			height: 30px;
+			width: 360px;
+		}
+		.su {
+			height: 30px;
+			width: 80px;
+			background: #438EB9;
+			border-radius: 5px;
+			margin-left: 30px;
+		}
+		#up a:VISITED,#up a:LINK {
+			color: #4C8FBD;
+			text-decoration: none;
+		}
+		#up a:HOVER {
+			color: #4C8FBD;
+			text-decoration: none;
+		}
